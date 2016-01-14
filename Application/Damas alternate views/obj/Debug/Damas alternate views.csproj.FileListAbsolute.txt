@@ -1,0 +1,55 @@
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Damas alternate views.dll.config
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Damas alternate views.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Damas alternate views.pdb
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Antlr3.Runtime.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\EntityFramework.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\EntityFramework.SqlServer.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.Google.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Web.Infrastructure.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Newtonsoft.Json.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Owin.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.Helpers.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.Mvc.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.Optimization.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.Razor.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.WebPages.Deployment.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.WebPages.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.WebPages.Razor.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\WebGrease.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.Helpers.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.Mvc.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.Optimization.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.Razor.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.WebPages.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.WebPages.Deployment.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\System.Web.WebPages.Razor.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Antlr3.Runtime.pdb
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Newtonsoft.Json.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\EntityFramework.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\EntityFramework.SqlServer.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.Google.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\obj\Debug\Damas alternate views.csprojResolveAssemblyReference.cache
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\obj\Debug\Damas alternate views.dll
+c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\obj\Debug\Damas alternate views.pdb
