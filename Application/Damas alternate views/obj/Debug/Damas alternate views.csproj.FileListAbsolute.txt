@@ -53,3 +53,58 @@ c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas a
 c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\obj\Debug\Damas alternate views.csprojResolveAssemblyReference.cache
 c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\obj\Debug\Damas alternate views.dll
 c:\users\jan\documents\visual studio 2013\Projects\Damas alternate views\Damas alternate views\obj\Debug\Damas alternate views.pdb
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Damas alternate views.dll.config
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Damas alternate views.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Damas alternate views.pdb
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Antlr3.Runtime.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\EntityFramework.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\EntityFramework.SqlServer.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.AspNet.Identity.Core.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.Cookies.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.Facebook.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.Google.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.OAuth.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.Twitter.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Web.Infrastructure.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Newtonsoft.Json.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Owin.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.Helpers.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.Mvc.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.Optimization.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.Razor.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.WebPages.Deployment.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.WebPages.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.WebPages.Razor.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\WebGrease.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.Helpers.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.Mvc.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.Optimization.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.Razor.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.WebPages.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.WebPages.Deployment.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\System.Web.WebPages.Razor.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Antlr3.Runtime.pdb
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Newtonsoft.Json.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\EntityFramework.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\EntityFramework.SqlServer.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.AspNet.Identity.Core.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.Facebook.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.Cookies.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.OAuth.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.Google.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.Twitter.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\obj\Debug\Damas alternate views.csprojResolveAssemblyReference.cache
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\obj\Debug\Damas alternate views.dll
+C:\work\repositories\damas-alternate-views\Application\Damas alternate views\obj\Debug\Damas alternate views.pdb
