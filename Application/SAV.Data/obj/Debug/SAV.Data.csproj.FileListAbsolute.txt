@@ -1,0 +1,8 @@
+C:\work\repositories\damas-alternate-views\Application\SAV.Data\bin\Debug\SAV.Data.dll.config
+C:\work\repositories\damas-alternate-views\Application\SAV.Data\bin\Debug\SAV.Data.dll
+C:\work\repositories\damas-alternate-views\Application\SAV.Data\bin\Debug\SAV.Data.pdb
+C:\work\repositories\damas-alternate-views\Application\SAV.Data\bin\Debug\EntityFramework.dll
+C:\work\repositories\damas-alternate-views\Application\SAV.Data\bin\Debug\EntityFramework.xml
+C:\work\repositories\damas-alternate-views\Application\SAV.Data\obj\Debug\SAV.Data.csprojResolveAssemblyReference.cache
+C:\work\repositories\damas-alternate-views\Application\SAV.Data\obj\Debug\SAV.Data.dll
+C:\work\repositories\damas-alternate-views\Application\SAV.Data\obj\Debug\SAV.Data.pdb

@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Damas alternate views", "Damas alternate views\Damas alternate views.csproj", "{9B3FF955-073B-4795-A95C-B2258C01286F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAV.Data", "SAV.Data\SAV.Data.csproj", "{F74C816B-728B-4A9A-9FE4-34EE0443A601}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9B3FF955-073B-4795-A95C-B2258C01286F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B3FF955-073B-4795-A95C-B2258C01286F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B3FF955-073B-4795-A95C-B2258C01286F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F74C816B-728B-4A9A-9FE4-34EE0443A601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F74C816B-728B-4A9A-9FE4-34EE0443A601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F74C816B-728B-4A9A-9FE4-34EE0443A601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F74C816B-728B-4A9A-9FE4-34EE0443A601}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

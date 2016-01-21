@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SAV_Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cascading_Style_Sheets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="Version" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Column">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Class" Type="nvarchar" MaxLength="50" />
+    <Property Name="HTML_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Component">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Component_Type_Id" Type="int" Nullable="false" />
+    <Property Name="HTML_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Component_Bind">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Columnd_Id" Type="int" Nullable="false" />
+    <Property Name="Component_Id" Type="int" Nullable="false" />
+    <Property Name="Component_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Component_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="JavaScript_Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="Version" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Layout">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Header_Id" Type="int" />
+    <Property Name="Container_Id" Type="int" />
+    <Property Name="HTML_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Layout_Container">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="HTML_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Layout_Header">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="HTML_content" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DAV_database.dbo.Main_Content_Rows' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Main_Content_Rows">
+    <Key>
+      <PropertyRef Name="Main_Content_Id" />
+      <PropertyRef Name="Row_Id" />
+      <PropertyRef Name="Order" />
+    </Key>
+    <Property Name="Main_Content_Id" Type="int" Nullable="false" />
+    <Property Name="Row_Id" Type="int" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Page_Content">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Container_Id" Type="int" Nullable="false" />
+    <Property Name="Main_Content_Id" Type="int" />
+    <Property Name="Page_Header_Id" Type="int" />
+    <Property Name="Page_Sidebar_Id" Type="int" />
+    <Property Name="HTML_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Page_Header">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="HTML_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Page_Main_Content">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Page_Content_Id" Type="int" Nullable="false" />
+    <Property Name="HTML_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Page_Sidebar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="HTML_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Row">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Class" Type="nvarchar" MaxLength="50" />
+    <Property Name="HTML_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Rows_Columns">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Row_Id" Type="int" Nullable="false" />
+    <Property Name="Column_Id" Type="int" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Layout_Id" Type="int" Nullable="false" />
+    <Property Name="Page_Content_Id" Type="int" />
+  </EntityType>
+  <Association Name="FK_Component_Bind_ToColumn">
+    <End Role="Column" Type="Self.Column" Multiplicity="1" />
+    <End Role="Component_Bind" Type="Self.Component_Bind" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Column">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Component_Bind">
+        <PropertyRef Name="Columnd_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Component_Bind_ToComponent">
+    <End Role="Component" Type="Self.Component" Multiplicity="1" />
+    <End Role="Component_Bind" Type="Self.Component_Bind" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Component_Bind">
+        <PropertyRef Name="Component_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Component_ToComponentType">
+    <End Role="Component_Type" Type="Self.Component_Type" Multiplicity="1" />
+    <End Role="Component" Type="Self.Component" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Component_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Component">
+        <PropertyRef Name="Component_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Layout_ToContainer">
+    <End Role="Layout_Container" Type="Self.Layout_Container" Multiplicity="0..1" />
+    <End Role="Layout" Type="Self.Layout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Layout_Container">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Layout">
+        <PropertyRef Name="Container_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Layout_ToHeader">
+    <End Role="Layout_Header" Type="Self.Layout_Header" Multiplicity="0..1" />
+    <End Role="Layout" Type="Self.Layout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Layout_Header">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Layout">
+        <PropertyRef Name="Header_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Main_Content_Rows_ToMainContents">
+    <End Role="Page_Main_Content" Type="Self.Page_Main_Content" Multiplicity="1" />
+    <End Role="Main_Content_Rows" Type="Self.Main_Content_Rows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page_Main_Content">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Main_Content_Rows">
+        <PropertyRef Name="Main_Content_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Main_Content_Rows_ToRows">
+    <End Role="Row" Type="Self.Row" Multiplicity="1" />
+    <End Role="Main_Content_Rows" Type="Self.Main_Content_Rows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Row">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Main_Content_Rows">
+        <PropertyRef Name="Row_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Page_Content_ToMainContent">
+    <End Role="Page_Main_Content" Type="Self.Page_Main_Content" Multiplicity="0..1" />
+    <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page_Main_Content">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Page_Content">
+        <PropertyRef Name="Main_Content_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Page_Content_ToPageHeader">
+    <End Role="Page_Header" Type="Self.Page_Header" Multiplicity="0..1" />
+    <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page_Header">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Page_Content">
+        <PropertyRef Name="Page_Header_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Page_Content_ToPageSidebar">
+    <End Role="Page_Sidebar" Type="Self.Page_Sidebar" Multiplicity="0..1" />
+    <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page_Sidebar">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Page_Content">
+        <PropertyRef Name="Page_Sidebar_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rows_Columns_ToColumns">
+    <End Role="Column" Type="Self.Column" Multiplicity="1" />
+    <End Role="Rows_Columns" Type="Self.Rows_Columns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Column">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rows_Columns">
+        <PropertyRef Name="Column_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rows_Columns_ToRows">
+    <End Role="Row" Type="Self.Row" Multiplicity="1" />
+    <End Role="Rows_Columns" Type="Self.Rows_Columns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Row">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rows_Columns">
+        <PropertyRef Name="Row_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_View_ToLayout">
+    <End Role="Layout" Type="Self.Layout" Multiplicity="1" />
+    <End Role="View" Type="Self.View" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Layout">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="View">
+        <PropertyRef Name="Layout_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_View_ToPageContent">
+    <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="0..1" />
+    <End Role="View" Type="Self.View" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page_Content">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="View">
+        <PropertyRef Name="Page_Content_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SAV_EntitiesStoreContainer">
+    <EntitySet Name="Cascading_Style_Sheets" EntityType="Self.Cascading_Style_Sheets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Column" EntityType="Self.Column" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Component" EntityType="Self.Component" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Component_Bind" EntityType="Self.Component_Bind" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Component_Type" EntityType="Self.Component_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JavaScript_Files" EntityType="Self.JavaScript_Files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Layout" EntityType="Self.Layout" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Layout_Container" EntityType="Self.Layout_Container" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Layout_Header" EntityType="Self.Layout_Header" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Page_Content" EntityType="Self.Page_Content" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Page_Header" EntityType="Self.Page_Header" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Page_Main_Content" EntityType="Self.Page_Main_Content" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Page_Sidebar" EntityType="Self.Page_Sidebar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Row" EntityType="Self.Row" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rows_Columns" EntityType="Self.Rows_Columns" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View" EntityType="Self.View" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Main_Content_Rows" EntityType="Self.Main_Content_Rows" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Main_Content_Rows].[Main_Content_Id] AS [Main_Content_Id], 
+[Main_Content_Rows].[Row_Id] AS [Row_Id], 
+[Main_Content_Rows].[Order] AS [Order]
+FROM [dbo].[Main_Content_Rows] AS [Main_Content_Rows]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Component_Bind_ToColumn" Association="Self.FK_Component_Bind_ToColumn">
+      <End Role="Column" EntitySet="Column" />
+      <End Role="Component_Bind" EntitySet="Component_Bind" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Component_Bind_ToComponent" Association="Self.FK_Component_Bind_ToComponent">
+      <End Role="Component" EntitySet="Component" />
+      <End Role="Component_Bind" EntitySet="Component_Bind" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Component_ToComponentType" Association="Self.FK_Component_ToComponentType">
+      <End Role="Component_Type" EntitySet="Component_Type" />
+      <End Role="Component" EntitySet="Component" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Layout_ToContainer" Association="Self.FK_Layout_ToContainer">
+      <End Role="Layout_Container" EntitySet="Layout_Container" />
+      <End Role="Layout" EntitySet="Layout" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Layout_ToHeader" Association="Self.FK_Layout_ToHeader">
+      <End Role="Layout_Header" EntitySet="Layout_Header" />
+      <End Role="Layout" EntitySet="Layout" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Main_Content_Rows_ToMainContents" Association="Self.FK_Main_Content_Rows_ToMainContents">
+      <End Role="Page_Main_Content" EntitySet="Page_Main_Content" />
+      <End Role="Main_Content_Rows" EntitySet="Main_Content_Rows" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Main_Content_Rows_ToRows" Association="Self.FK_Main_Content_Rows_ToRows">
+      <End Role="Row" EntitySet="Row" />
+      <End Role="Main_Content_Rows" EntitySet="Main_Content_Rows" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Page_Content_ToMainContent" Association="Self.FK_Page_Content_ToMainContent">
+      <End Role="Page_Main_Content" EntitySet="Page_Main_Content" />
+      <End Role="Page_Content" EntitySet="Page_Content" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Page_Content_ToPageHeader" Association="Self.FK_Page_Content_ToPageHeader">
+      <End Role="Page_Header" EntitySet="Page_Header" />
+      <End Role="Page_Content" EntitySet="Page_Content" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Page_Content_ToPageSidebar" Association="Self.FK_Page_Content_ToPageSidebar">
+      <End Role="Page_Sidebar" EntitySet="Page_Sidebar" />
+      <End Role="Page_Content" EntitySet="Page_Content" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rows_Columns_ToColumns" Association="Self.FK_Rows_Columns_ToColumns">
+      <End Role="Column" EntitySet="Column" />
+      <End Role="Rows_Columns" EntitySet="Rows_Columns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rows_Columns_ToRows" Association="Self.FK_Rows_Columns_ToRows">
+      <End Role="Row" EntitySet="Row" />
+      <End Role="Rows_Columns" EntitySet="Rows_Columns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_View_ToLayout" Association="Self.FK_View_ToLayout">
+      <End Role="Layout" EntitySet="Layout" />
+      <End Role="View" EntitySet="View" />
+    </AssociationSet>
+    <AssociationSet Name="FK_View_ToPageContent" Association="Self.FK_View_ToPageContent">
+      <End Role="Page_Content" EntitySet="Page_Content" />
+      <End Role="View" EntitySet="View" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,1350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SAV_Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cascading_Style_Sheets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="Version" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Column">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Class" Type="nvarchar" MaxLength="50" />
+          <Property Name="HTML_content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Column_Binding">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Row_Id" Type="int" Nullable="false" />
+          <Property Name="Column_Id" Type="int" Nullable="false" />
+          <Property Name="Order" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Component">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Component_Type_Id" Type="int" Nullable="false" />
+          <Property Name="HTML_content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Component_Bind">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Columnd_Id" Type="int" Nullable="false" />
+          <Property Name="Component_Id" Type="int" Nullable="false" />
+          <Property Name="Component_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Component_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="JavaScript_Files">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="Version" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Layout">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Header_Id" Type="int" />
+          <Property Name="Container_Id" Type="int" />
+          <Property Name="HTML_content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Layout_Container">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="HTML_content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Layout_Header">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="HTML_content" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DAV_database.dbo.Layout_To_CSS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Layout_To_CSS">
+          <Key>
+            <PropertyRef Name="Layout_Id" />
+            <PropertyRef Name="CSS_Id" />
+          </Key>
+          <Property Name="Layout_Id" Type="int" Nullable="false" />
+          <Property Name="CSS_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DAV_database.dbo.Layout_To_JS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Layout_To_JS">
+          <Key>
+            <PropertyRef Name="Layout_Id" />
+            <PropertyRef Name="JS_Id" />
+          </Key>
+          <Property Name="Layout_Id" Type="int" Nullable="false" />
+          <Property Name="JS_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Page_Content">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Container_Id" Type="int" Nullable="false" />
+          <Property Name="Main_Content_Id" Type="int" />
+          <Property Name="Page_Header_Id" Type="int" />
+          <Property Name="Page_Sidebar_Id" Type="int" />
+          <Property Name="HTML_content" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DAV_database.dbo.Page_Content_To_CSS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Page_Content_To_CSS">
+          <Key>
+            <PropertyRef Name="Layout_Id" />
+            <PropertyRef Name="CSS_Id" />
+          </Key>
+          <Property Name="Layout_Id" Type="int" Nullable="false" />
+          <Property Name="CSS_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DAV_database.dbo.Page_Content_To_JS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Page_Content_To_JS">
+          <Key>
+            <PropertyRef Name="Layout_Id" />
+            <PropertyRef Name="JS_Id" />
+          </Key>
+          <Property Name="Layout_Id" Type="int" Nullable="false" />
+          <Property Name="JS_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Page_Header">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="HTML_content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Page_Main_Content">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Page_Content_Id" Type="int" Nullable="false" />
+          <Property Name="HTML_content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Page_Sidebar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="HTML_content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Row">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Class" Type="nvarchar" MaxLength="50" />
+          <Property Name="HTML_content" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DAV_database.dbo.Row_Binding' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Row_Binding">
+          <Key>
+            <PropertyRef Name="Main_Content_Id" />
+            <PropertyRef Name="Row_Id" />
+            <PropertyRef Name="Order" />
+          </Key>
+          <Property Name="Main_Content_Id" Type="int" Nullable="false" />
+          <Property Name="Row_Id" Type="int" Nullable="false" />
+          <Property Name="Order" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="View">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Layout_Id" Type="int" Nullable="false" />
+          <Property Name="Page_Content_Id" Type="int" />
+        </EntityType>
+        <Association Name="FK_Column_Binding_ToColumn">
+          <End Role="Column" Type="Self.Column" Multiplicity="1" />
+          <End Role="Column_Binding" Type="Self.Column_Binding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Column">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Column_Binding">
+              <PropertyRef Name="Column_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Column_Binding_ToRow">
+          <End Role="Row" Type="Self.Row" Multiplicity="1" />
+          <End Role="Column_Binding" Type="Self.Column_Binding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Row">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Column_Binding">
+              <PropertyRef Name="Row_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Component_Bind_ToColumn">
+          <End Role="Column" Type="Self.Column" Multiplicity="1" />
+          <End Role="Component_Bind" Type="Self.Component_Bind" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Column">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Component_Bind">
+              <PropertyRef Name="Columnd_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Component_Bind_ToComponent">
+          <End Role="Component" Type="Self.Component" Multiplicity="1" />
+          <End Role="Component_Bind" Type="Self.Component_Bind" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Component">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Component_Bind">
+              <PropertyRef Name="Component_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Component_ToComponentType">
+          <End Role="Component_Type" Type="Self.Component_Type" Multiplicity="1" />
+          <End Role="Component" Type="Self.Component" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Component_Type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Component">
+              <PropertyRef Name="Component_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Layout_ToContainer">
+          <End Role="Layout_Container" Type="Self.Layout_Container" Multiplicity="0..1" />
+          <End Role="Layout" Type="Self.Layout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout_Container">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Layout">
+              <PropertyRef Name="Container_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Layout_ToHeader">
+          <End Role="Layout_Header" Type="Self.Layout_Header" Multiplicity="0..1" />
+          <End Role="Layout" Type="Self.Layout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout_Header">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Layout">
+              <PropertyRef Name="Header_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Table_ToCSS">
+          <End Role="Cascading_Style_Sheets" Type="Self.Cascading_Style_Sheets" Multiplicity="1" />
+          <End Role="Layout_To_CSS" Type="Self.Layout_To_CSS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cascading_Style_Sheets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Layout_To_CSS">
+              <PropertyRef Name="CSS_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Table_ToCSS2">
+          <End Role="Cascading_Style_Sheets" Type="Self.Cascading_Style_Sheets" Multiplicity="1" />
+          <End Role="Page_Content_To_CSS" Type="Self.Page_Content_To_CSS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cascading_Style_Sheets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content_To_CSS">
+              <PropertyRef Name="CSS_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Table_ToJS">
+          <End Role="JavaScript_Files" Type="Self.JavaScript_Files" Multiplicity="1" />
+          <End Role="Layout_To_JS" Type="Self.Layout_To_JS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JavaScript_Files">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Layout_To_JS">
+              <PropertyRef Name="JS_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Table_ToJS2">
+          <End Role="JavaScript_Files" Type="Self.JavaScript_Files" Multiplicity="1" />
+          <End Role="Page_Content_To_JS" Type="Self.Page_Content_To_JS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JavaScript_Files">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content_To_JS">
+              <PropertyRef Name="JS_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Table_ToLayout">
+          <End Role="Layout" Type="Self.Layout" Multiplicity="1" />
+          <End Role="Layout_To_CSS" Type="Self.Layout_To_CSS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Layout_To_CSS">
+              <PropertyRef Name="Layout_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Table_ToLayout2">
+          <End Role="Layout" Type="Self.Layout" Multiplicity="1" />
+          <End Role="Layout_To_JS" Type="Self.Layout_To_JS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Layout_To_JS">
+              <PropertyRef Name="Layout_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Table_ToPageContent">
+          <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="1" />
+          <End Role="Page_Content_To_JS" Type="Self.Page_Content_To_JS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content_To_JS">
+              <PropertyRef Name="Layout_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Table_ToPageContent2">
+          <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="1" />
+          <End Role="Page_Content_To_CSS" Type="Self.Page_Content_To_CSS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content_To_CSS">
+              <PropertyRef Name="Layout_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_Content_ToContainer">
+          <End Role="Layout_Container" Type="Self.Layout_Container" Multiplicity="1" />
+          <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout_Container">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content">
+              <PropertyRef Name="Container_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_Content_ToMainContent">
+          <End Role="Page_Main_Content" Type="Self.Page_Main_Content" Multiplicity="0..1" />
+          <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Main_Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content">
+              <PropertyRef Name="Main_Content_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_Content_ToPageHeader">
+          <End Role="Page_Header" Type="Self.Page_Header" Multiplicity="0..1" />
+          <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Header">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content">
+              <PropertyRef Name="Page_Header_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_Content_ToPageSidebar">
+          <End Role="Page_Sidebar" Type="Self.Page_Sidebar" Multiplicity="0..1" />
+          <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Sidebar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content">
+              <PropertyRef Name="Page_Sidebar_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Row_Binding_ToMainContent">
+          <End Role="Page_Main_Content" Type="Self.Page_Main_Content" Multiplicity="1" />
+          <End Role="Row_Binding" Type="Self.Row_Binding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Main_Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Row_Binding">
+              <PropertyRef Name="Main_Content_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Row_Binding_ToRow">
+          <End Role="Row" Type="Self.Row" Multiplicity="1" />
+          <End Role="Row_Binding" Type="Self.Row_Binding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Row">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Row_Binding">
+              <PropertyRef Name="Row_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_View_ToLayout">
+          <End Role="Layout" Type="Self.Layout" Multiplicity="1" />
+          <End Role="View" Type="Self.View" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="View">
+              <PropertyRef Name="Layout_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_View_ToPageContent">
+          <End Role="Page_Content" Type="Self.Page_Content" Multiplicity="0..1" />
+          <End Role="View" Type="Self.View" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="View">
+              <PropertyRef Name="Page_Content_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SAV_EntitiesStoreContainer">
+          <EntitySet Name="Cascading_Style_Sheets" EntityType="Self.Cascading_Style_Sheets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Column" EntityType="Self.Column" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Column_Binding" EntityType="Self.Column_Binding" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Component" EntityType="Self.Component" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Component_Bind" EntityType="Self.Component_Bind" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Component_Type" EntityType="Self.Component_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JavaScript_Files" EntityType="Self.JavaScript_Files" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Layout" EntityType="Self.Layout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Layout_Container" EntityType="Self.Layout_Container" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Layout_Header" EntityType="Self.Layout_Header" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Page_Content" EntityType="Self.Page_Content" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Page_Header" EntityType="Self.Page_Header" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Page_Main_Content" EntityType="Self.Page_Main_Content" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Page_Sidebar" EntityType="Self.Page_Sidebar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Row" EntityType="Self.Row" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View" EntityType="Self.View" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Layout_To_CSS" EntityType="Self.Layout_To_CSS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Layout_To_CSS].[Layout_Id] AS [Layout_Id], 
+[Layout_To_CSS].[CSS_Id] AS [CSS_Id]
+FROM [dbo].[Layout_To_CSS] AS [Layout_To_CSS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Layout_To_JS" EntityType="Self.Layout_To_JS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Layout_To_JS].[Layout_Id] AS [Layout_Id], 
+[Layout_To_JS].[JS_Id] AS [JS_Id]
+FROM [dbo].[Layout_To_JS] AS [Layout_To_JS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Page_Content_To_CSS" EntityType="Self.Page_Content_To_CSS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Page_Content_To_CSS].[Layout_Id] AS [Layout_Id], 
+[Page_Content_To_CSS].[CSS_Id] AS [CSS_Id]
+FROM [dbo].[Page_Content_To_CSS] AS [Page_Content_To_CSS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Page_Content_To_JS" EntityType="Self.Page_Content_To_JS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Page_Content_To_JS].[Layout_Id] AS [Layout_Id], 
+[Page_Content_To_JS].[JS_Id] AS [JS_Id]
+FROM [dbo].[Page_Content_To_JS] AS [Page_Content_To_JS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Row_Binding" EntityType="Self.Row_Binding" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Row_Binding].[Main_Content_Id] AS [Main_Content_Id], 
+[Row_Binding].[Row_Id] AS [Row_Id], 
+[Row_Binding].[Order] AS [Order]
+FROM [dbo].[Row_Binding] AS [Row_Binding]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Column_Binding_ToColumn" Association="Self.FK_Column_Binding_ToColumn">
+            <End Role="Column" EntitySet="Column" />
+            <End Role="Column_Binding" EntitySet="Column_Binding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Column_Binding_ToRow" Association="Self.FK_Column_Binding_ToRow">
+            <End Role="Row" EntitySet="Row" />
+            <End Role="Column_Binding" EntitySet="Column_Binding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Component_Bind_ToColumn" Association="Self.FK_Component_Bind_ToColumn">
+            <End Role="Column" EntitySet="Column" />
+            <End Role="Component_Bind" EntitySet="Component_Bind" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Component_Bind_ToComponent" Association="Self.FK_Component_Bind_ToComponent">
+            <End Role="Component" EntitySet="Component" />
+            <End Role="Component_Bind" EntitySet="Component_Bind" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Component_ToComponentType" Association="Self.FK_Component_ToComponentType">
+            <End Role="Component_Type" EntitySet="Component_Type" />
+            <End Role="Component" EntitySet="Component" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Layout_ToContainer" Association="Self.FK_Layout_ToContainer">
+            <End Role="Layout_Container" EntitySet="Layout_Container" />
+            <End Role="Layout" EntitySet="Layout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Layout_ToHeader" Association="Self.FK_Layout_ToHeader">
+            <End Role="Layout_Header" EntitySet="Layout_Header" />
+            <End Role="Layout" EntitySet="Layout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Table_ToCSS" Association="Self.FK_Mapping_Table_ToCSS">
+            <End Role="Cascading_Style_Sheets" EntitySet="Cascading_Style_Sheets" />
+            <End Role="Layout_To_CSS" EntitySet="Layout_To_CSS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Table_ToCSS2" Association="Self.FK_Mapping_Table_ToCSS2">
+            <End Role="Cascading_Style_Sheets" EntitySet="Cascading_Style_Sheets" />
+            <End Role="Page_Content_To_CSS" EntitySet="Page_Content_To_CSS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Table_ToJS" Association="Self.FK_Mapping_Table_ToJS">
+            <End Role="JavaScript_Files" EntitySet="JavaScript_Files" />
+            <End Role="Layout_To_JS" EntitySet="Layout_To_JS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Table_ToJS2" Association="Self.FK_Mapping_Table_ToJS2">
+            <End Role="JavaScript_Files" EntitySet="JavaScript_Files" />
+            <End Role="Page_Content_To_JS" EntitySet="Page_Content_To_JS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Table_ToLayout" Association="Self.FK_Mapping_Table_ToLayout">
+            <End Role="Layout" EntitySet="Layout" />
+            <End Role="Layout_To_CSS" EntitySet="Layout_To_CSS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Table_ToLayout2" Association="Self.FK_Mapping_Table_ToLayout2">
+            <End Role="Layout" EntitySet="Layout" />
+            <End Role="Layout_To_JS" EntitySet="Layout_To_JS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Table_ToPageContent" Association="Self.FK_Mapping_Table_ToPageContent">
+            <End Role="Page_Content" EntitySet="Page_Content" />
+            <End Role="Page_Content_To_JS" EntitySet="Page_Content_To_JS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Table_ToPageContent2" Association="Self.FK_Mapping_Table_ToPageContent2">
+            <End Role="Page_Content" EntitySet="Page_Content" />
+            <End Role="Page_Content_To_CSS" EntitySet="Page_Content_To_CSS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_Content_ToContainer" Association="Self.FK_Page_Content_ToContainer">
+            <End Role="Layout_Container" EntitySet="Layout_Container" />
+            <End Role="Page_Content" EntitySet="Page_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_Content_ToMainContent" Association="Self.FK_Page_Content_ToMainContent">
+            <End Role="Page_Main_Content" EntitySet="Page_Main_Content" />
+            <End Role="Page_Content" EntitySet="Page_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_Content_ToPageHeader" Association="Self.FK_Page_Content_ToPageHeader">
+            <End Role="Page_Header" EntitySet="Page_Header" />
+            <End Role="Page_Content" EntitySet="Page_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_Content_ToPageSidebar" Association="Self.FK_Page_Content_ToPageSidebar">
+            <End Role="Page_Sidebar" EntitySet="Page_Sidebar" />
+            <End Role="Page_Content" EntitySet="Page_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Row_Binding_ToMainContent" Association="Self.FK_Row_Binding_ToMainContent">
+            <End Role="Page_Main_Content" EntitySet="Page_Main_Content" />
+            <End Role="Row_Binding" EntitySet="Row_Binding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Row_Binding_ToRow" Association="Self.FK_Row_Binding_ToRow">
+            <End Role="Row" EntitySet="Row" />
+            <End Role="Row_Binding" EntitySet="Row_Binding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_View_ToLayout" Association="Self.FK_View_ToLayout">
+            <End Role="Layout" EntitySet="Layout" />
+            <End Role="View" EntitySet="View" />
+          </AssociationSet>
+          <AssociationSet Name="FK_View_ToPageContent" Association="Self.FK_View_ToPageContent">
+            <End Role="Page_Content" EntitySet="Page_Content" />
+            <End Role="View" EntitySet="View" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SAV_Entities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SAV_database" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cascading_Style_Sheets" EntityType="SAV_Entities.Cascading_Style_Sheets" />
+          <EntitySet Name="Column" EntityType="SAV_Entities.Column" />
+          <EntitySet Name="Column_Binding" EntityType="SAV_Entities.Column_Binding" />
+          <EntitySet Name="Component" EntityType="SAV_Entities.Component" />
+          <EntitySet Name="Component_Bind" EntityType="SAV_Entities.Component_Bind" />
+          <EntitySet Name="Component_Type" EntityType="SAV_Entities.Component_Type" />
+          <EntitySet Name="JavaScript_Files" EntityType="SAV_Entities.JavaScript_Files" />
+          <EntitySet Name="Layout" EntityType="SAV_Entities.Layout" />
+          <EntitySet Name="Layout_Container" EntityType="SAV_Entities.Layout_Container" />
+          <EntitySet Name="Layout_Header" EntityType="SAV_Entities.Layout_Header" />
+          <EntitySet Name="Page_Content" EntityType="SAV_Entities.Page_Content" />
+          <EntitySet Name="Page_Header" EntityType="SAV_Entities.Page_Header" />
+          <EntitySet Name="Page_Main_Content" EntityType="SAV_Entities.Page_Main_Content" />
+          <EntitySet Name="Page_Sidebar" EntityType="SAV_Entities.Page_Sidebar" />
+          <EntitySet Name="Row" EntityType="SAV_Entities.Row" />
+          <EntitySet Name="View" EntityType="SAV_Entities.View" />
+          <EntitySet Name="Row_Binding" EntityType="SAV_Entities.Row_Binding" />
+          <AssociationSet Name="FK_Column_Binding_ToColumn" Association="SAV_Entities.FK_Column_Binding_ToColumn">
+            <End Role="Column" EntitySet="Column" />
+            <End Role="Column_Binding" EntitySet="Column_Binding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Component_Bind_ToColumn" Association="SAV_Entities.FK_Component_Bind_ToColumn">
+            <End Role="Column" EntitySet="Column" />
+            <End Role="Component_Bind" EntitySet="Component_Bind" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Column_Binding_ToRow" Association="SAV_Entities.FK_Column_Binding_ToRow">
+            <End Role="Row" EntitySet="Row" />
+            <End Role="Column_Binding" EntitySet="Column_Binding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Component_Bind_ToComponent" Association="SAV_Entities.FK_Component_Bind_ToComponent">
+            <End Role="Component" EntitySet="Component" />
+            <End Role="Component_Bind" EntitySet="Component_Bind" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Component_ToComponentType" Association="SAV_Entities.FK_Component_ToComponentType">
+            <End Role="Component_Type" EntitySet="Component_Type" />
+            <End Role="Component" EntitySet="Component" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Layout_ToContainer" Association="SAV_Entities.FK_Layout_ToContainer">
+            <End Role="Layout_Container" EntitySet="Layout_Container" />
+            <End Role="Layout" EntitySet="Layout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Layout_ToHeader" Association="SAV_Entities.FK_Layout_ToHeader">
+            <End Role="Layout_Header" EntitySet="Layout_Header" />
+            <End Role="Layout" EntitySet="Layout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_View_ToLayout" Association="SAV_Entities.FK_View_ToLayout">
+            <End Role="Layout" EntitySet="Layout" />
+            <End Role="View" EntitySet="View" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_Content_ToContainer" Association="SAV_Entities.FK_Page_Content_ToContainer">
+            <End Role="Layout_Container" EntitySet="Layout_Container" />
+            <End Role="Page_Content" EntitySet="Page_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_Content_ToMainContent" Association="SAV_Entities.FK_Page_Content_ToMainContent">
+            <End Role="Page_Main_Content" EntitySet="Page_Main_Content" />
+            <End Role="Page_Content" EntitySet="Page_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_Content_ToPageHeader" Association="SAV_Entities.FK_Page_Content_ToPageHeader">
+            <End Role="Page_Header" EntitySet="Page_Header" />
+            <End Role="Page_Content" EntitySet="Page_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_Content_ToPageSidebar" Association="SAV_Entities.FK_Page_Content_ToPageSidebar">
+            <End Role="Page_Sidebar" EntitySet="Page_Sidebar" />
+            <End Role="Page_Content" EntitySet="Page_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_View_ToPageContent" Association="SAV_Entities.FK_View_ToPageContent">
+            <End Role="Page_Content" EntitySet="Page_Content" />
+            <End Role="View" EntitySet="View" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Row_Binding_ToMainContent" Association="SAV_Entities.FK_Row_Binding_ToMainContent">
+            <End Role="Page_Main_Content" EntitySet="Page_Main_Content" />
+            <End Role="Row_Binding" EntitySet="Row_Binding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Row_Binding_ToRow" Association="SAV_Entities.FK_Row_Binding_ToRow">
+            <End Role="Row" EntitySet="Row" />
+            <End Role="Row_Binding" EntitySet="Row_Binding" />
+          </AssociationSet>
+          <AssociationSet Name="Layout_To_CSS" Association="SAV_Entities.Layout_To_CSS">
+            <End Role="Cascading_Style_Sheets" EntitySet="Cascading_Style_Sheets" />
+            <End Role="Layout" EntitySet="Layout" />
+          </AssociationSet>
+          <AssociationSet Name="Layout_To_JS" Association="SAV_Entities.Layout_To_JS">
+            <End Role="JavaScript_Files" EntitySet="JavaScript_Files" />
+            <End Role="Layout" EntitySet="Layout" />
+          </AssociationSet>
+          <AssociationSet Name="Page_Content_To_CSS" Association="SAV_Entities.Page_Content_To_CSS">
+            <End Role="Cascading_Style_Sheets" EntitySet="Cascading_Style_Sheets" />
+            <End Role="Page_Content" EntitySet="Page_Content" />
+          </AssociationSet>
+          <AssociationSet Name="Page_Content_To_JS" Association="SAV_Entities.Page_Content_To_JS">
+            <End Role="JavaScript_Files" EntitySet="JavaScript_Files" />
+            <End Role="Page_Content" EntitySet="Page_Content" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cascading_Style_Sheets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Version" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Layout" Relationship="SAV_Entities.Layout_To_CSS" FromRole="Cascading_Style_Sheets" ToRole="Layout" />
+          <NavigationProperty Name="Page_Content" Relationship="SAV_Entities.Page_Content_To_CSS" FromRole="Cascading_Style_Sheets" ToRole="Page_Content" />
+        </EntityType>
+        <EntityType Name="Column">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HTML_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Column_Binding" Relationship="SAV_Entities.FK_Column_Binding_ToColumn" FromRole="Column" ToRole="Column_Binding" />
+          <NavigationProperty Name="Component_Bind" Relationship="SAV_Entities.FK_Component_Bind_ToColumn" FromRole="Column" ToRole="Component_Bind" />
+        </EntityType>
+        <EntityType Name="Column_Binding">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Row_Id" Type="Int32" Nullable="false" />
+          <Property Name="Column_Id" Type="Int32" Nullable="false" />
+          <Property Name="Order" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Column" Relationship="SAV_Entities.FK_Column_Binding_ToColumn" FromRole="Column_Binding" ToRole="Column" />
+          <NavigationProperty Name="Row" Relationship="SAV_Entities.FK_Column_Binding_ToRow" FromRole="Column_Binding" ToRole="Row" />
+        </EntityType>
+        <EntityType Name="Component">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Component_Type_Id" Type="Int32" Nullable="false" />
+          <Property Name="HTML_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Component_Bind" Relationship="SAV_Entities.FK_Component_Bind_ToComponent" FromRole="Component" ToRole="Component_Bind" />
+          <NavigationProperty Name="Component_Type" Relationship="SAV_Entities.FK_Component_ToComponentType" FromRole="Component" ToRole="Component_Type" />
+        </EntityType>
+        <EntityType Name="Component_Bind">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Columnd_Id" Type="Int32" Nullable="false" />
+          <Property Name="Component_Id" Type="Int32" Nullable="false" />
+          <Property Name="Component_Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Column" Relationship="SAV_Entities.FK_Component_Bind_ToColumn" FromRole="Component_Bind" ToRole="Column" />
+          <NavigationProperty Name="Component" Relationship="SAV_Entities.FK_Component_Bind_ToComponent" FromRole="Component_Bind" ToRole="Component" />
+        </EntityType>
+        <EntityType Name="Component_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Component" Relationship="SAV_Entities.FK_Component_ToComponentType" FromRole="Component_Type" ToRole="Component" />
+        </EntityType>
+        <EntityType Name="JavaScript_Files">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Version" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Layout" Relationship="SAV_Entities.Layout_To_JS" FromRole="JavaScript_Files" ToRole="Layout" />
+          <NavigationProperty Name="Page_Content" Relationship="SAV_Entities.Page_Content_To_JS" FromRole="JavaScript_Files" ToRole="Page_Content" />
+        </EntityType>
+        <EntityType Name="Layout">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Header_Id" Type="Int32" />
+          <Property Name="Container_Id" Type="Int32" />
+          <Property Name="HTML_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Layout_Container" Relationship="SAV_Entities.FK_Layout_ToContainer" FromRole="Layout" ToRole="Layout_Container" />
+          <NavigationProperty Name="Layout_Header" Relationship="SAV_Entities.FK_Layout_ToHeader" FromRole="Layout" ToRole="Layout_Header" />
+          <NavigationProperty Name="View" Relationship="SAV_Entities.FK_View_ToLayout" FromRole="Layout" ToRole="View" />
+          <NavigationProperty Name="Cascading_Style_Sheets" Relationship="SAV_Entities.Layout_To_CSS" FromRole="Layout" ToRole="Cascading_Style_Sheets" />
+          <NavigationProperty Name="JavaScript_Files" Relationship="SAV_Entities.Layout_To_JS" FromRole="Layout" ToRole="JavaScript_Files" />
+        </EntityType>
+        <EntityType Name="Layout_Container">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HTML_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Layout" Relationship="SAV_Entities.FK_Layout_ToContainer" FromRole="Layout_Container" ToRole="Layout" />
+          <NavigationProperty Name="Page_Content" Relationship="SAV_Entities.FK_Page_Content_ToContainer" FromRole="Layout_Container" ToRole="Page_Content" />
+        </EntityType>
+        <EntityType Name="Layout_Header">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HTML_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Layout" Relationship="SAV_Entities.FK_Layout_ToHeader" FromRole="Layout_Header" ToRole="Layout" />
+        </EntityType>
+        <EntityType Name="Page_Content">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Container_Id" Type="Int32" Nullable="false" />
+          <Property Name="Main_Content_Id" Type="Int32" />
+          <Property Name="Page_Header_Id" Type="Int32" />
+          <Property Name="Page_Sidebar_Id" Type="Int32" />
+          <Property Name="HTML_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Layout_Container" Relationship="SAV_Entities.FK_Page_Content_ToContainer" FromRole="Page_Content" ToRole="Layout_Container" />
+          <NavigationProperty Name="Page_Main_Content" Relationship="SAV_Entities.FK_Page_Content_ToMainContent" FromRole="Page_Content" ToRole="Page_Main_Content" />
+          <NavigationProperty Name="Page_Header" Relationship="SAV_Entities.FK_Page_Content_ToPageHeader" FromRole="Page_Content" ToRole="Page_Header" />
+          <NavigationProperty Name="Page_Sidebar" Relationship="SAV_Entities.FK_Page_Content_ToPageSidebar" FromRole="Page_Content" ToRole="Page_Sidebar" />
+          <NavigationProperty Name="View" Relationship="SAV_Entities.FK_View_ToPageContent" FromRole="Page_Content" ToRole="View" />
+          <NavigationProperty Name="Cascading_Style_Sheets" Relationship="SAV_Entities.Page_Content_To_CSS" FromRole="Page_Content" ToRole="Cascading_Style_Sheets" />
+          <NavigationProperty Name="JavaScript_Files" Relationship="SAV_Entities.Page_Content_To_JS" FromRole="Page_Content" ToRole="JavaScript_Files" />
+        </EntityType>
+        <EntityType Name="Page_Header">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="HTML_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Page_Content" Relationship="SAV_Entities.FK_Page_Content_ToPageHeader" FromRole="Page_Header" ToRole="Page_Content" />
+        </EntityType>
+        <EntityType Name="Page_Main_Content">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Page_Content_Id" Type="Int32" Nullable="false" />
+          <Property Name="HTML_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Page_Content" Relationship="SAV_Entities.FK_Page_Content_ToMainContent" FromRole="Page_Main_Content" ToRole="Page_Content" />
+          <NavigationProperty Name="Row_Binding" Relationship="SAV_Entities.FK_Row_Binding_ToMainContent" FromRole="Page_Main_Content" ToRole="Row_Binding" />
+        </EntityType>
+        <EntityType Name="Page_Sidebar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="HTML_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Page_Content" Relationship="SAV_Entities.FK_Page_Content_ToPageSidebar" FromRole="Page_Sidebar" ToRole="Page_Content" />
+        </EntityType>
+        <EntityType Name="Row">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HTML_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Column_Binding" Relationship="SAV_Entities.FK_Column_Binding_ToRow" FromRole="Row" ToRole="Column_Binding" />
+          <NavigationProperty Name="Row_Binding" Relationship="SAV_Entities.FK_Row_Binding_ToRow" FromRole="Row" ToRole="Row_Binding" />
+        </EntityType>
+        <EntityType Name="View">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Layout_Id" Type="Int32" Nullable="false" />
+          <Property Name="Page_Content_Id" Type="Int32" />
+          <NavigationProperty Name="Layout" Relationship="SAV_Entities.FK_View_ToLayout" FromRole="View" ToRole="Layout" />
+          <NavigationProperty Name="Page_Content" Relationship="SAV_Entities.FK_View_ToPageContent" FromRole="View" ToRole="Page_Content" />
+        </EntityType>
+        <EntityType Name="Row_Binding">
+          <Key>
+            <PropertyRef Name="Main_Content_Id" />
+            <PropertyRef Name="Row_Id" />
+            <PropertyRef Name="Order" />
+          </Key>
+          <Property Name="Main_Content_Id" Type="Int32" Nullable="false" />
+          <Property Name="Row_Id" Type="Int32" Nullable="false" />
+          <Property Name="Order" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Page_Main_Content" Relationship="SAV_Entities.FK_Row_Binding_ToMainContent" FromRole="Row_Binding" ToRole="Page_Main_Content" />
+          <NavigationProperty Name="Row" Relationship="SAV_Entities.FK_Row_Binding_ToRow" FromRole="Row_Binding" ToRole="Row" />
+        </EntityType>
+        <Association Name="FK_Column_Binding_ToColumn">
+          <End Type="SAV_Entities.Column" Role="Column" Multiplicity="1" />
+          <End Type="SAV_Entities.Column_Binding" Role="Column_Binding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Column">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Column_Binding">
+              <PropertyRef Name="Column_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Component_Bind_ToColumn">
+          <End Type="SAV_Entities.Column" Role="Column" Multiplicity="1" />
+          <End Type="SAV_Entities.Component_Bind" Role="Component_Bind" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Column">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Component_Bind">
+              <PropertyRef Name="Columnd_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Column_Binding_ToRow">
+          <End Type="SAV_Entities.Row" Role="Row" Multiplicity="1" />
+          <End Type="SAV_Entities.Column_Binding" Role="Column_Binding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Row">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Column_Binding">
+              <PropertyRef Name="Row_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Component_Bind_ToComponent">
+          <End Type="SAV_Entities.Component" Role="Component" Multiplicity="1" />
+          <End Type="SAV_Entities.Component_Bind" Role="Component_Bind" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Component">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Component_Bind">
+              <PropertyRef Name="Component_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Component_ToComponentType">
+          <End Type="SAV_Entities.Component_Type" Role="Component_Type" Multiplicity="1" />
+          <End Type="SAV_Entities.Component" Role="Component" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Component_Type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Component">
+              <PropertyRef Name="Component_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Layout_ToContainer">
+          <End Type="SAV_Entities.Layout_Container" Role="Layout_Container" Multiplicity="0..1" />
+          <End Type="SAV_Entities.Layout" Role="Layout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout_Container">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Layout">
+              <PropertyRef Name="Container_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Layout_ToHeader">
+          <End Type="SAV_Entities.Layout_Header" Role="Layout_Header" Multiplicity="0..1" />
+          <End Type="SAV_Entities.Layout" Role="Layout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout_Header">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Layout">
+              <PropertyRef Name="Header_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_View_ToLayout">
+          <End Type="SAV_Entities.Layout" Role="Layout" Multiplicity="1" />
+          <End Type="SAV_Entities.View" Role="View" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="View">
+              <PropertyRef Name="Layout_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_Content_ToContainer">
+          <End Type="SAV_Entities.Layout_Container" Role="Layout_Container" Multiplicity="1" />
+          <End Type="SAV_Entities.Page_Content" Role="Page_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout_Container">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content">
+              <PropertyRef Name="Container_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_Content_ToMainContent">
+          <End Type="SAV_Entities.Page_Main_Content" Role="Page_Main_Content" Multiplicity="0..1" />
+          <End Type="SAV_Entities.Page_Content" Role="Page_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Main_Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content">
+              <PropertyRef Name="Main_Content_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_Content_ToPageHeader">
+          <End Type="SAV_Entities.Page_Header" Role="Page_Header" Multiplicity="0..1" />
+          <End Type="SAV_Entities.Page_Content" Role="Page_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Header">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content">
+              <PropertyRef Name="Page_Header_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_Content_ToPageSidebar">
+          <End Type="SAV_Entities.Page_Sidebar" Role="Page_Sidebar" Multiplicity="0..1" />
+          <End Type="SAV_Entities.Page_Content" Role="Page_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Sidebar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Page_Content">
+              <PropertyRef Name="Page_Sidebar_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_View_ToPageContent">
+          <End Type="SAV_Entities.Page_Content" Role="Page_Content" Multiplicity="0..1" />
+          <End Type="SAV_Entities.View" Role="View" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="View">
+              <PropertyRef Name="Page_Content_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Row_Binding_ToMainContent">
+          <End Type="SAV_Entities.Page_Main_Content" Role="Page_Main_Content" Multiplicity="1" />
+          <End Type="SAV_Entities.Row_Binding" Role="Row_Binding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page_Main_Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Row_Binding">
+              <PropertyRef Name="Main_Content_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Row_Binding_ToRow">
+          <End Type="SAV_Entities.Row" Role="Row" Multiplicity="1" />
+          <End Type="SAV_Entities.Row_Binding" Role="Row_Binding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Row">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Row_Binding">
+              <PropertyRef Name="Row_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Layout_To_CSS">
+          <End Type="SAV_Entities.Cascading_Style_Sheets" Role="Cascading_Style_Sheets" Multiplicity="*" />
+          <End Type="SAV_Entities.Layout" Role="Layout" Multiplicity="*" />
+        </Association>
+        <Association Name="Layout_To_JS">
+          <End Type="SAV_Entities.JavaScript_Files" Role="JavaScript_Files" Multiplicity="*" />
+          <End Type="SAV_Entities.Layout" Role="Layout" Multiplicity="*" />
+        </Association>
+        <Association Name="Page_Content_To_CSS">
+          <End Type="SAV_Entities.Cascading_Style_Sheets" Role="Cascading_Style_Sheets" Multiplicity="*" />
+          <End Type="SAV_Entities.Page_Content" Role="Page_Content" Multiplicity="*" />
+        </Association>
+        <Association Name="Page_Content_To_JS">
+          <End Type="SAV_Entities.JavaScript_Files" Role="JavaScript_Files" Multiplicity="*" />
+          <End Type="SAV_Entities.Page_Content" Role="Page_Content" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SAV_EntitiesStoreContainer" CdmEntityContainer="SAV_database">
+          <EntitySetMapping Name="Cascading_Style_Sheets">
+            <EntityTypeMapping TypeName="SAV_Entities.Cascading_Style_Sheets">
+              <MappingFragment StoreEntitySet="Cascading_Style_Sheets">
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Column">
+            <EntityTypeMapping TypeName="SAV_Entities.Column">
+              <MappingFragment StoreEntitySet="Column">
+                <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Column_Binding">
+            <EntityTypeMapping TypeName="SAV_Entities.Column_Binding">
+              <MappingFragment StoreEntitySet="Column_Binding">
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Column_Id" ColumnName="Column_Id" />
+                <ScalarProperty Name="Row_Id" ColumnName="Row_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Component">
+            <EntityTypeMapping TypeName="SAV_Entities.Component">
+              <MappingFragment StoreEntitySet="Component">
+                <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+                <ScalarProperty Name="Component_Type_Id" ColumnName="Component_Type_Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Component_Bind">
+            <EntityTypeMapping TypeName="SAV_Entities.Component_Bind">
+              <MappingFragment StoreEntitySet="Component_Bind">
+                <ScalarProperty Name="Component_Type" ColumnName="Component_Type" />
+                <ScalarProperty Name="Component_Id" ColumnName="Component_Id" />
+                <ScalarProperty Name="Columnd_Id" ColumnName="Columnd_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Component_Type">
+            <EntityTypeMapping TypeName="SAV_Entities.Component_Type">
+              <MappingFragment StoreEntitySet="Component_Type">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JavaScript_Files">
+            <EntityTypeMapping TypeName="SAV_Entities.JavaScript_Files">
+              <MappingFragment StoreEntitySet="JavaScript_Files">
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Layout">
+            <EntityTypeMapping TypeName="SAV_Entities.Layout">
+              <MappingFragment StoreEntitySet="Layout">
+                <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+                <ScalarProperty Name="Container_Id" ColumnName="Container_Id" />
+                <ScalarProperty Name="Header_Id" ColumnName="Header_Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Layout_Container">
+            <EntityTypeMapping TypeName="SAV_Entities.Layout_Container">
+              <MappingFragment StoreEntitySet="Layout_Container">
+                <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Layout_Header">
+            <EntityTypeMapping TypeName="SAV_Entities.Layout_Header">
+              <MappingFragment StoreEntitySet="Layout_Header">
+                <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Page_Content">
+            <EntityTypeMapping TypeName="SAV_Entities.Page_Content">
+              <MappingFragment StoreEntitySet="Page_Content">
+                <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+                <ScalarProperty Name="Page_Sidebar_Id" ColumnName="Page_Sidebar_Id" />
+                <ScalarProperty Name="Page_Header_Id" ColumnName="Page_Header_Id" />
+                <ScalarProperty Name="Main_Content_Id" ColumnName="Main_Content_Id" />
+                <ScalarProperty Name="Container_Id" ColumnName="Container_Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Page_Header">
+            <EntityTypeMapping TypeName="SAV_Entities.Page_Header">
+              <MappingFragment StoreEntitySet="Page_Header">
+                <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Page_Main_Content">
+            <EntityTypeMapping TypeName="SAV_Entities.Page_Main_Content">
+              <MappingFragment StoreEntitySet="Page_Main_Content">
+                <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+                <ScalarProperty Name="Page_Content_Id" ColumnName="Page_Content_Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Page_Sidebar">
+            <EntityTypeMapping TypeName="SAV_Entities.Page_Sidebar">
+              <MappingFragment StoreEntitySet="Page_Sidebar">
+                <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Row">
+            <EntityTypeMapping TypeName="SAV_Entities.Row">
+              <MappingFragment StoreEntitySet="Row">
+                <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View">
+            <EntityTypeMapping TypeName="SAV_Entities.View">
+              <MappingFragment StoreEntitySet="View">
+                <ScalarProperty Name="Page_Content_Id" ColumnName="Page_Content_Id" />
+                <ScalarProperty Name="Layout_Id" ColumnName="Layout_Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Row_Binding">
+            <EntityTypeMapping TypeName="SAV_Entities.Row_Binding">
+              <MappingFragment StoreEntitySet="Row_Binding">
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Row_Id" ColumnName="Row_Id" />
+                <ScalarProperty Name="Main_Content_Id" ColumnName="Main_Content_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Layout_To_CSS" TypeName="SAV_Entities.Layout_To_CSS" StoreEntitySet="Layout_To_CSS">
+            <EndProperty Name="Layout">
+              <ScalarProperty Name="Id" ColumnName="Layout_Id" />
+            </EndProperty>
+            <EndProperty Name="Cascading_Style_Sheets">
+              <ScalarProperty Name="Id" ColumnName="CSS_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Layout_To_JS" TypeName="SAV_Entities.Layout_To_JS" StoreEntitySet="Layout_To_JS">
+            <EndProperty Name="Layout">
+              <ScalarProperty Name="Id" ColumnName="Layout_Id" />
+            </EndProperty>
+            <EndProperty Name="JavaScript_Files">
+              <ScalarProperty Name="Id" ColumnName="JS_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Page_Content_To_CSS" TypeName="SAV_Entities.Page_Content_To_CSS" StoreEntitySet="Page_Content_To_CSS">
+            <EndProperty Name="Page_Content">
+              <ScalarProperty Name="Id" ColumnName="Layout_Id" />
+            </EndProperty>
+            <EndProperty Name="Cascading_Style_Sheets">
+              <ScalarProperty Name="Id" ColumnName="CSS_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Page_Content_To_JS" TypeName="SAV_Entities.Page_Content_To_JS" StoreEntitySet="Page_Content_To_JS">
+            <EndProperty Name="Page_Content">
+              <ScalarProperty Name="Id" ColumnName="Layout_Id" />
+            </EndProperty>
+            <EndProperty Name="JavaScript_Files">
+              <ScalarProperty Name="Id" ColumnName="JS_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

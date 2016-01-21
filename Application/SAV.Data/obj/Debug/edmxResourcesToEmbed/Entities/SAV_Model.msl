@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SAV_EntitiesStoreContainer" CdmEntityContainer="SAV_database">
+    <EntitySetMapping Name="Cascading_Style_Sheets">
+      <EntityTypeMapping TypeName="SAV_Entities.Cascading_Style_Sheets">
+        <MappingFragment StoreEntitySet="Cascading_Style_Sheets">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Column">
+      <EntityTypeMapping TypeName="SAV_Entities.Column">
+        <MappingFragment StoreEntitySet="Column">
+          <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Component">
+      <EntityTypeMapping TypeName="SAV_Entities.Component">
+        <MappingFragment StoreEntitySet="Component">
+          <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+          <ScalarProperty Name="Component_Type_Id" ColumnName="Component_Type_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Component_Bind">
+      <EntityTypeMapping TypeName="SAV_Entities.Component_Bind">
+        <MappingFragment StoreEntitySet="Component_Bind">
+          <ScalarProperty Name="Component_Type" ColumnName="Component_Type" />
+          <ScalarProperty Name="Component_Id" ColumnName="Component_Id" />
+          <ScalarProperty Name="Columnd_Id" ColumnName="Columnd_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Component_Type">
+      <EntityTypeMapping TypeName="SAV_Entities.Component_Type">
+        <MappingFragment StoreEntitySet="Component_Type">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JavaScript_Files">
+      <EntityTypeMapping TypeName="SAV_Entities.JavaScript_Files">
+        <MappingFragment StoreEntitySet="JavaScript_Files">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Layout">
+      <EntityTypeMapping TypeName="SAV_Entities.Layout">
+        <MappingFragment StoreEntitySet="Layout">
+          <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+          <ScalarProperty Name="Container_Id" ColumnName="Container_Id" />
+          <ScalarProperty Name="Header_Id" ColumnName="Header_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Layout_Container">
+      <EntityTypeMapping TypeName="SAV_Entities.Layout_Container">
+        <MappingFragment StoreEntitySet="Layout_Container">
+          <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Layout_Header">
+      <EntityTypeMapping TypeName="SAV_Entities.Layout_Header">
+        <MappingFragment StoreEntitySet="Layout_Header">
+          <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Page_Content">
+      <EntityTypeMapping TypeName="SAV_Entities.Page_Content">
+        <MappingFragment StoreEntitySet="Page_Content">
+          <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+          <ScalarProperty Name="Page_Sidebar_Id" ColumnName="Page_Sidebar_Id" />
+          <ScalarProperty Name="Page_Header_Id" ColumnName="Page_Header_Id" />
+          <ScalarProperty Name="Main_Content_Id" ColumnName="Main_Content_Id" />
+          <ScalarProperty Name="Container_Id" ColumnName="Container_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Page_Header">
+      <EntityTypeMapping TypeName="SAV_Entities.Page_Header">
+        <MappingFragment StoreEntitySet="Page_Header">
+          <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Page_Main_Content">
+      <EntityTypeMapping TypeName="SAV_Entities.Page_Main_Content">
+        <MappingFragment StoreEntitySet="Page_Main_Content">
+          <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+          <ScalarProperty Name="Page_Content_Id" ColumnName="Page_Content_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Page_Sidebar">
+      <EntityTypeMapping TypeName="SAV_Entities.Page_Sidebar">
+        <MappingFragment StoreEntitySet="Page_Sidebar">
+          <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Row">
+      <EntityTypeMapping TypeName="SAV_Entities.Row">
+        <MappingFragment StoreEntitySet="Row">
+          <ScalarProperty Name="HTML_content" ColumnName="HTML_content" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rows_Columns">
+      <EntityTypeMapping TypeName="SAV_Entities.Rows_Columns">
+        <MappingFragment StoreEntitySet="Rows_Columns">
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Column_Id" ColumnName="Column_Id" />
+          <ScalarProperty Name="Row_Id" ColumnName="Row_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View">
+      <EntityTypeMapping TypeName="SAV_Entities.View">
+        <MappingFragment StoreEntitySet="View">
+          <ScalarProperty Name="Page_Content_Id" ColumnName="Page_Content_Id" />
+          <ScalarProperty Name="Layout_Id" ColumnName="Layout_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Main_Content_Rows">
+      <EntityTypeMapping TypeName="SAV_Entities.Main_Content_Rows">
+        <MappingFragment StoreEntitySet="Main_Content_Rows">
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Row_Id" ColumnName="Row_Id" />
+          <ScalarProperty Name="Main_Content_Id" ColumnName="Main_Content_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
